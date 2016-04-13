@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html ng-app="app" ng-controller ='Ctrl'>
+<head lang="en">
+  <meta charset="utf-8">
+  <title> Intro to Angular</title>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular.min.js"></script>
+  <script>
+  angular.module('app',[])
+  angular.module('app').controller('Ctrl', function($scope){
+    $scope.message ="Hello World";
+      $scope.color= 'green';
+      $scope.change = function(){
+        $scope.color = 'red';
+
+        $scope.myArray = ['one','two','three','four']
+      }
+
+
+
+  })
+
+  </script>
+</head>
+<body style ="background-color: {{color}}">
+{{message}}
+<input type="text" ng-model="message"/>
+<input type="text" ng-model="color"/>
+<div ng-repeat="item in myArray"><button>Click</button>
+  <input type="text" />{{item}}
+</div>
+</body>
+</html>
